@@ -14,9 +14,7 @@ if [ -e ${SCRIPT_DIR}/../.env ]; then
   export $(grep -v '^#' ${SCRIPT_DIR}/../.env|xargs)
 fi
 
-docker-compose run --rm openvpn \
-  --volume /tmp/openvpn_clients:/etc/openvpn/clients \
-  ovpn_getclient_all
+docker-compose run --rm --volume /tmp/openvpn_clients:/etc/openvpn/clients openvpn ovpn_getclient_all
 
 ### For Docker ############################
 #docker run --rm -it \

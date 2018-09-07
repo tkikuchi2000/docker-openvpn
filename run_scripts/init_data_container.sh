@@ -13,12 +13,8 @@ if [ -e ${SCRIPT_DIR}/../.env ]; then
   export $(grep -v '^#' ${SCRIPT_DIR}/../.env|xargs)
 fi
 
-docker-compose run --rm openvpn \
-#  -e DEBUG=1 \
-  ovpn_genconfig
-docker-compose run --rm openvpn \
-#  -e DEBUG=1 \
-  ovpn_initpki
+docker-compose run --rm openvpn ovpn_genconfig -u udp://${VPN_SERVER_NAME:-127.0.0.1}
+docker-compose run --rm openvpn ovpn_initpki
 
 ### For Docker ###################################
 ### Create data container ${OVPN_DATA}

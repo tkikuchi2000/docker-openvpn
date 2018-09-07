@@ -11,8 +11,7 @@ if [ -e ${SCRIPT_DIR}/../.env ]; then
   export $(grep -v '^#' ${SCRIPT_DIR}/../.env|xargs)
 fi
 
-docker-compose run --rm openvpn \
-  ovpn_listclients
+docker-compose run --rm openvpn ovpn_listclients
 
 #docker run --rm \
 #	-v ${OVPN_DATA:-'ovpn-data-example'}:/etc/openvpn \

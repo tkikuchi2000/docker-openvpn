@@ -51,12 +51,12 @@ services:
 
   ```bash
   $ cd run_scripts
-  $ bash gen_cert_nopass.sh
+  $ bash gen_client_cert.sh <username> nopass
   ```
 
 - Retrieve the client configuration with embedded certificates
 
   ```bash
   $ cd run_scripts
-  $ bash retrieve_client_conf.sh
+  $ bash retrieve_client_conf.sh <username> remove
   ```

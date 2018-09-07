@@ -18,12 +18,7 @@ if [ -e ${SCRIPT_DIR}/../.env ]; then
   export $(grep -v '^#' ${SCRIPT_DIR}/../.env|xargs)
 fi
 
-docker-compose run --rm openvpn \
-#  -e DEBUG=1 \
-  ovpn_revokeclient ${CLIENTNAME}
-# docker-compose run --rm openvpn \
-#  -e DEBUG=1 \
-  ovpn_revokeclient ${CLIENTNAME} remove
+docker-compose run --rm openvpn ovpn_revokeclient ${CLIENTNAME} ${REMOVE}
 
 ### For Docker ############################
 #docker run --rm \

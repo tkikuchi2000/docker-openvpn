@@ -14,9 +14,7 @@ if [ -e ${SCRIPT_DIR}/../.env ]; then
   export $(grep -v '^#' ${SCRIPT_DIR}/../.env|xargs)
 fi
 
-docker-compose run --rm openvpn \
-#  -e DEBUG=1 \
-  easyrsa build-client-full ${CLIENTNAME} nopass
+docker-compose run --rm openvpn easyrsa build-client-full ${CLIENTNAME} ${NOPASS}
 
 ## For Docker ############################
 #docker run --rm -it \
