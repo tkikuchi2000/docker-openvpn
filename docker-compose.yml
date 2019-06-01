@@ -4,7 +4,7 @@ services:
     container_name: openvpn
     build:
       context: .
-      dockerfile: Dockerfile.arm32v6
+      dockerfile: Dockerfile.arm32v7
     volumes:
       - ./openvpn-data/conf:/etc/openvpn
     ports:
