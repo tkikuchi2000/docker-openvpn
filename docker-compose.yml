@@ -13,11 +13,11 @@ services:
       - NET_ADMIN
     restart: always
     logging:
-      driver: "none"
-#      driver: "json-file"
-#      options:
-#        max-size: "200k"
-#        max-file: "5"
+      #driver: "none"
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "5"
     env_file:
       - .env
 
