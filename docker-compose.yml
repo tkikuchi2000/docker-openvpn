@@ -11,6 +11,7 @@ services:
       - "${BIND_OVPN_PORT}:1194/udp"
     cap_add:
       - NET_ADMIN
+    privileged: true
     restart: always
     logging:
       #driver: "none"
